@@ -26,7 +26,15 @@ TransformerGO is a model based on the orginal Transformer architecture. It is us
 The model is trained and evaluated using datasets for two organisms *S. Cerevisiae* and *H. Sapiens*
 - TCSS datasets: [An improved method for scoring protein-protein interactions using semantic similarity within the gene ontology](http://baderlab.org/Software/TCSS)  
 - StringDB benchmark: [Semantic similarity and machine learning with ontologies](https://github.com/bio-ontology-research-group/machine-learning-with-ontologies)
-- TransformerGO datasets are created using the String database. The following notebook can be used to generete **new** datasets for the organisms available on StringDB:[`dataset.ipynb`](./datasets/transformerGO-dataset/dataset.ipynb).
+- TransformerGO's interaction datasets are created using the String database. The following notebook can be used to generete **new** datasets for organisms available on StringDB:[`dataset.ipynb`](./datasets/transformerGO-dataset/dataset.ipynb). To generate a new dataset compatible with our model multiple files must be downloaded. An example for *H. Sapiens*:
+```python
+#Annotation data
+url = 'http://geneontology.org/gene-associations/goa_human.gaf.gz'
+#Protein to protein interactions
+url = 'https://stringdb-static.org/download/protein.links.v11.5/9606.protein.links.v11.5.txt.gz'
+#Protein aliases 
+url = 'https://stringdb-static.org/download/protein.aliases.v11.5/9606.protein.aliases.v11.5.txt.gz'
+```
 
 
 ## Generating GO term embeddings
@@ -39,7 +47,6 @@ An example of running node2vec:
 input_path="../../../datasets/transformerGO-dataset/go-terms/graph/go-terms.edgelist"
 output_path="../../../datasets/transformerGO-dataset/go-terms/emb/go-terms.emd"
 python node2vec-master/src/main.py --input $input_path --output $ouput_path --dimensions 64 --iter 10
-
 ```
 
 ## Training and testing the model
@@ -59,10 +66,24 @@ Running experiements using specific gene ontology terms or different annotation 
 intr_set_size_filter = [0,5000]
 go_filter = 'CC'
 ```
+To train or test the model using a new dataset, simply provide the paths to the interaction data, annotation file and the aliases file as follows:
+```python
+organism = 9606
+EMB_DIM = 64
+data_path = 'datasets/transformerGO-dataset/'
+go_embed_pth = data_path + f"go-terms/emb/go-terms-{EMB_DIM}.emd"
+go_id_dict_pth = data_path + "go-terms/go_id_dict"
+protein_go_anno_pth = data_path +"stringDB-files/goa_human.gaf.gz"
+alias_path = data_path + f'stringDB-files/{organism}.protein.aliases.v11.5.txt.gz'
+
+neg_path = data_path + f'interaction-datasets/{organism}.protein.negative.v11.5.txt'
+poz_path= data_path + f'interaction-datasets/{organism}.protein.links.v11.5.txt'
+```
+Note that the embedings could also be changed by running node2vec on a completly different Gene Ontology graph.
 
 ## Attention analysis
 ### Generating heatmaps 
-Generating heatmaps requires a model trained on the same dataset we are analysing. The heatmaps contain the aggregation of the attention weights after passing through each positive interaction from the dataset. Heatmaps can be generated via [`attention-plots.ipynb`](./attention-analysis/attention-plots.ipynb). Examples generated using the StringDB benchmark for *S. Cerevisiae* and *H. Sapiens* can be found in [`attention-heatmaps`](./attention-analysis/attention-heatmaps.ipynb).
+The heatmaps contain the aggregation of the attention weights after passing through each positive interaction from the dataset. Heatmaps can be generated via [`attention-plots.ipynb`](./attention-analysis/attention-plots.ipynb). Examples generated using the StringDB benchmark for *S. Cerevisiae* and *H. Sapiens* can be found in [`attention-heatmaps`](./attention-analysis/attention-heatmaps.ipynb). To generate heatmaps on a new dataset, change the paths as shown in the example above. Note that the examples in the paper are generated using only positive interactions from the training dataset.
 
 ### Analysing the attention for one interaction
 In [`attention-per-interaction.ipynb`](./attention-analysis/attention-per-interaction.ipynb) we provide a notebook which can be used to analyse the attention values between GO terms given a single interaction. Here the heatmaps for each head and layer are generated.
