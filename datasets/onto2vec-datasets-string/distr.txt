@@ -1,0 +1,63 @@
+The TRUE distribution of the dataset (train/valid/test) after removing interactions with no GO terms:
+
+
+yeast -with mirror
+145112  -pozitive
+114694  -negative
+36366  -pozitive
+28714  -negative
+45358  -pozitive
+36146  -negative
+
+Train set:  259806 
+ Valid set:  65080 
+ Test set:  81504 
+		total = 406390
+
+
+human -with mirror
+525140  -pozitive
+461468  -negative
+131256  -pozitive
+115632  -negative
+164176  -pozitive
+144238  -negative
+
+Train set:  986608 
+ Valid set:  246888 
+ Test set:  308414 
+		Total 1541910
+
+
+
+-------------------------------------------
+no mirror
+-------------------------------------------
+
+yeast *************************************
+72556  -pozitive
+57560  -negative
+18183  -pozitive
+14316  -negative
+22679  -pozitive
+17806  -negative
+Train set:  130116 
+ Valid set:  32499 
+ Test set:  40485 
+	Total 203100
+
+
+human *************************************
+
+262570  -pozitive
+230699  -negative
+65628  -pozitive
+57665  -negative
+82088  -pozitive
+72305  -negative
+Train set:  493269 
+ Valid set:  123293 
+ Test set:  154393 
+
+Total 770955
+
