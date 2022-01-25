@@ -1,0 +1,7 @@
+name: base
+channels:
+  - defaults
+dependencies:
+  - conda
+  - python=3.7
+prefix: /local/software/conda/miniconda-py3-new
