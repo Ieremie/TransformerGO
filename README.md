@@ -5,7 +5,7 @@ This repository contains the official implementation of the paper:
 
 **For more details, see:** [TransformerGO: Predicting protein-protein interactions by modelling the attention between sets of gene ontology terms](hyperlink). 
 
-<img src="https://github.com/Ieremie/old-transformerGO/blob/main/TransformerGO.png" width="75%" height="75%">
+<img src="https://github.com/Ieremie/TransformerGO/blob/main/TransformerGO.png" width="75%" height="75%">
 
 
 ## About
