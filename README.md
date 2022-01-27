@@ -17,7 +17,7 @@ TransformerGO is a model based on the orginal Transformer architecture. It is us
 * [Generating GO term embeddings](#generating-go-term-embeddings)
 * [Training and testing the model](#training-and-testing-the-model)
     * [LSTM](#lstm)
-    * [TransformerGO](#transformergo)
+    * [TransformerGO](#transformergo-model)
 * [Attention analysis](#attention-analysis)
     * [Generating heatmaps](#generating-heatmaps)
     * [Analysing the attention for one interaction](#analysing-the-attention-for-one-interaction)
@@ -57,7 +57,7 @@ Changing the organism or the subset can be done by changing the following paths.
 neg_path = "datasets/jains-TCSS-datasets/yeast_data/iea+/negatives.sgd.iea.f"
 poz_path = "datasets/jains-TCSS-datasets/yeast_data/iea+/positives.sgd.iea.f"
 ```
-### TransformerGO
+### TransformerGO model
 Training and testing the implementation of TransformerGO can be done via [`training-transformerGO.ipynb`](./training-testing/training-transformerGO.ipynb)
 
 Multiple datasets are available, and these can be chosen by running the code block corresponding to the desired dataset (TCSS, StringDB benchmark or our datasets).
