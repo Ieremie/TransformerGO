@@ -40,7 +40,7 @@ url = 'https://stringdb-static.org/download/protein.aliases.v11.5/9606.protein.a
 ## Generating GO term embeddings
 To generate embeddings for Gene Ontology terms, we use the original implementation of [node2vec: Scalable Feature Learning for Networks](https://github.com/aditya-grover/node2vec). 
 Parsing the .obo file is done using [`obo-file-parsing.ipynb`](./term-encoding-module/obo-file-parsing.ipynb) and the generation of the edge list (input for node2vec) using 
-[`node2vec-embeddings.ipynb`](./node2vec-embeddings.ipynb). 
+[`node2vec-embeddings.ipynb`](./term-encoding-module/node2vec-embeddings.ipynb). 
 An example of running node2vec:
 ```bash
 #!/bin/bash
