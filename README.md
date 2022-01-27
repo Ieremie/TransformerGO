@@ -83,7 +83,7 @@ Note that the embedings could also be changed by running node2vec on a completly
 
 ## Attention analysis
 ### Generating heatmaps 
-The heatmaps contain the aggregation of the attention weights after passing through each positive interaction from the dataset. Heatmaps can be generated via [`attention-plots.ipynb`](./attention-analysis/attention-plots.ipynb). Examples generated using the StringDB benchmark for *S. Cerevisiae* and *H. Sapiens* can be found in [`attention-heatmaps`](./attention-analysis/attention-heatmaps.ipynb). To generate heatmaps on a new dataset, change the paths as shown in the example above. Note that the examples in the paper are generated using only positive interactions from the training dataset.
+The heatmaps contain the aggregation of the attention weights after passing through each positive interaction from the dataset. Heatmaps can be generated via [`attention-plots.ipynb`](./attention-analysis/attention-plots.ipynb). Examples generated using the StringDB benchmark for *S. Cerevisiae* and *H. Sapiens* can be found in [`attention-heatmaps`](./attention-analysis/attention-heatmaps). To generate heatmaps on a new dataset, change the paths as shown in the example above. Note that the examples in the paper are generated using only positive interactions from the training dataset.
 
 ### Analysing the attention for one interaction
 In [`attention-per-interaction.ipynb`](./attention-analysis/attention-per-interaction.ipynb) we provide a notebook which can be used to analyse the attention values between GO terms given a single interaction. Here the heatmaps for each head and layer are generated.
