@@ -3,13 +3,13 @@
 This repository contains the official implementation of the paper: 
 "TransformerGO: Predicting protein-protein interactions by modelling the attention between sets of gene ontology terms"
 
-**For more details, see:** [TransformerGO: Predicting protein-protein interactions by modelling the attention between sets of gene ontology terms](hyperlink). 
+**For more details, see:** [TransformerGO: Predicting protein-protein interactions by modelling the attention between sets of gene ontology terms](https://doi.org/10.1093/bioinformatics/btac104). 
 
 <img src="https://github.com/Ieremie/TransformerGO/blob/main/TransformerGO.png" width="75%" height="75%">
 
 
 ## About
-TransformerGO is a model based on the orginal Transformer architecture. It is used to capture deep semantic similarities between gene ontology terms and predict protein to protein interactions. Introduced in our paper [TransformerGO: Predicting protein-protein interactions by modelling the attention between sets of gene ontology terms](hyperlink). 
+TransformerGO is a model based on the orginal Transformer architecture. It is used to capture deep semantic similarities between gene ontology terms and predict protein to protein interactions. Introduced in our paper [TransformerGO: Predicting protein-protein interactions by modelling the attention between sets of gene ontology terms](https://doi.org/10.1093/bioinformatics/btac104). 
 
 
 ## Contents
@@ -92,7 +92,20 @@ In [`attention-per-interaction.ipynb`](./attention-analysis/attention-per-intera
 Ioan Ieremie, Rob M. Ewing, Mahesan Niranjan
 
 ## Citation
-[To be added]
+```
+@article{10.1093/bioinformatics/btac104,
+    author = {Ieremie, Ioan and Ewing, Rob M and Niranjan, Mahesan},
+    title = "{TransformerGO: Predicting protein-protein interactions by modelling the attention between sets of gene ontology terms}",
+    journal = {Bioinformatics},
+    year = {2022},
+    month = {02},
+    issn = {1367-4803},
+    doi = {10.1093/bioinformatics/btac104},
+    url = {https://doi.org/10.1093/bioinformatics/btac104},
+    note = {btac104},
+    eprint = {https://academic.oup.com/bioinformatics/advance-article-pdf/doi/10.1093/bioinformatics/btac104/42546304/btac104.pdf},
+}
+```
 
 ## Contact
 ii1g17 [at] soton [dot] ac [dot] uk
